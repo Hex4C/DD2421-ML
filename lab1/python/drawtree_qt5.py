@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import dtree
+import python.dtree
 import sys
 
 from PyQt5 import QtCore, QtGui

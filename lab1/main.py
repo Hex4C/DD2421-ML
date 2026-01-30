@@ -1,5 +1,6 @@
 import python.monkdata as m
 import python.dtree as d
+from python.drawtree_qt5 import drawTree
 
 
 def calculate_attribute_entropy(datasets):
@@ -36,11 +37,19 @@ def calculate_monk_entropy():
 
     return entropy_m1, entropy_m2, entropy_m3
 
+def build_descion_tree():
+    # d.select()/7z   
+    d.select(4)
+    t1 = d.buildTree(m.monk1, m.attributes)
+    
+    print(d.check(t1, m.monk1test))
+
+    drawTree(t1)
 
 def main():
     datasets = [m.monk1, m.monk2, m.monk3]
-
-    calculate_attribute_entropy(datasets)
+    
+    build_descion_tree()
 
 
 if __name__ == "__main__":

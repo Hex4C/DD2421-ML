@@ -1,3 +1,9 @@
+### ENV
+python3 -m venv venv/
+pip install requirements.txt
+touch venv\Scripts\activate 
+
+
 # Lab 1
 
 Lab 1 decision trees
@@ -44,4 +50,12 @@ Monk 3: Max attribute 1 gain: 0.2937
 For Monk 1 we choose attribute 4, for Monk 2 attribute 4 and for Monk 3 attribute 1. This based on the information gain, which these attributes maximizes.
 
 ## Assignement 4
+
+When the information gain is maximized, the entropy for the subset $S_k$ is low compared to the entropy of the current node. 
+
+This means when maximizing the information gain we are searching for the path (subset) which gives us the largest difference in entropy, meaning that we choose to enter the path which gives us the highest amount of predictability for future guesses. We're actively minimizing the entropy by maximizing the gain in each tree node. This is preciesly why it's a good heuristic. It locally searches for the best path down the decision tree which is the attribute we want to choose.
+
+## Assignment 5
+
+
 
