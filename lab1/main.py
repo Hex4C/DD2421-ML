@@ -25,7 +25,7 @@ def calculate_attribute_entropy(datasets):
         min_attribute = max(monk_attribute_gains[i])
         a_index = monk_attribute_gains[i].index(min_attribute)
         print(
-            f"Monk {i + 1}: Min attribute {a_index} gain: {round(max(monk_attribute_gains[i]), 4)}"
+            f"Monk {i + 1}: Max attribute {a_index} gain: {round(max(monk_attribute_gains[i]), 4)}"
         )
 
 

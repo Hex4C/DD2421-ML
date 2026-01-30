@@ -35,8 +35,13 @@ An example for a high entropy would be a fair die. Whilst an example of a distri
 | Monk-2  | 0.0038 | 0.0025 | 0.0011 | 0.0157 | 0.0173 | 0.0062 |
 | Monk-3  | 0.0071 | 0.2937 | 0.0008 | 0.0029 | 0.2559 | 0.0071 |
 
-Monk 1: Min attribute 4 gain: 0.287
+Monk 1: Max attribute 4 gain: 0.287
 
-Monk 2: Min attribute 4 gain: 0.0173
+Monk 2: Max attribute 4 gain: 0.0173
 
-Monk 3: Min attribute 1 gain: 0.2937
+Monk 3: Max attribute 1 gain: 0.2937
+
+For Monk 1 we choose attribute 4, for Monk 2 attribute 4 and for Monk 3 attribute 1. This based on the information gain, which these attributes maximizes.
+
+## Assignement 4
+
