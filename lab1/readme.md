@@ -58,7 +58,8 @@ This means when maximizing the information gain we are searching for the path (s
 
 ## Assignment 5
 
-### Using select()
+### Manual tree vs buildTreee()
+Split 1: Attribute 5
 
 Max gain for value 1: attribute 1
 
@@ -70,8 +71,18 @@ Max gain for value 4: attribute 1
 
 So for the value 1 node, we should select attribute 1, for value node 2 attribute 4, for value node 3 attribute 6 and for value node 4 attribute 1.
 
+```console
+Max for sample 1: attribute 1
+Majority class for sample 1: True
+Max for sample 2: attribute 4
+Majority class for sample 2: False
+Max for sample 3: attribute 6
+Majority class for sample 3: False
+Max for sample 4: attribute 1
+Majority class for sample 4: False
+```
 
-###
+<img src="images/Descision_tree_2_splits.png" height=300 alt="Decision tree depth 2">
 
 ### Using buildTree()
 
