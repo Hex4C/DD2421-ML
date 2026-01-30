@@ -42,13 +42,13 @@ An example for a high entropy would be a fair die. Whilst an example of a distri
 | Monk-2  | 0.0038 | 0.0025 | 0.0011 | 0.0157 | 0.0173 | 0.0062 |
 | Monk-3  | 0.0071 | 0.2937 | 0.0008 | 0.0029 | 0.2559 | 0.0071 |
 
-Monk 1: Max attribute 4 gain: 0.287
+Monk 1: Max attribute 5 gain: 0.287
 
-Monk 2: Max attribute 4 gain: 0.0173
+Monk 2: Max attribute 5 gain: 0.0173
 
-Monk 3: Max attribute 1 gain: 0.2937
+Monk 3: Max attribute 2 gain: 0.2937
 
-For Monk 1 we choose attribute 4, for Monk 2 attribute 4 and for Monk 3 attribute 1. This based on the information gain, which these attributes maximizes.
+For Monk 1 we choose attribute 5, for Monk 2 attribute 5 and for Monk 3 attribute 2. This based on the information gain, which these attributes maximizes.
 
 ## Assignement 4
 
@@ -57,6 +57,10 @@ When the information gain is maximized, the entropy for the subset $S_k$ is low 
 This means when maximizing the information gain we are searching for the path (subset) which gives us the largest difference in entropy, meaning that we choose to enter the path which gives us the highest amount of predictability for future guesses. We're actively minimizing the entropy by maximizing the gain in each tree node. This is preciesly why it's a good heuristic. It locally searches for the best path down the decision tree which is the attribute we want to choose.
 
 ## Assignment 5
+
+
+
+### Using buildTree()
 
 | Monk   | $E_{train}$ | $E_{test}$          |
 | ------ | ----------- | ------------------- |
@@ -70,6 +74,9 @@ It also shows that the build tree can correctly map all of the training data whi
 
 ## Assignemnt 6
 
+By pruning we will remove one or more nodes in the tree, this will decrease the varaince of the results. This will according to the bias-variance trade-off lead to increased bias, making the training more generlised for the validation and testing data. However, it still tells that the model has something "wrong" since bias indicates that we need to adjust for something which necessarily isn't there, it's a value we've created to adjust to the uncertainity in the model. 
+ 
+## Assignment 7
 
 
 

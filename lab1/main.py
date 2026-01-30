@@ -56,12 +56,31 @@ def build_descion_tree():
     print(f"Training data performance: {d.check(t3, m.monk3)}")
     print(f"Testing data performance: {d.check(t3, m.monk3test)}")
     print()
+    
+def pruning():
+    pass
+
+def build_tree_manual(monk_dataset):
+    gains = []
+    for attribute in m.attributes:
+        data = d.averageGain(monk_dataset, attribute)
+        gains.append(data)
+    
+    max_attribute = max(gains)
+    a_index = gains.index(max_attribute)
+    print("attr :", a_index)
+    
+    drawTree(monk_dataset)
+    t = d.select(monk_dataset, m.attributes[a_index], max_attribute)
+    drawTree(monk_dataset)
+    print(d.mostCommon(monk_dataset))
+    print(t)
 
 def main():
     datasets = [m.monk1, m.monk2, m.monk3]
     
-    build_descion_tree()
-
+    build_tree_manual(m.monk1)
+    
 
 if __name__ == "__main__":
     main()
