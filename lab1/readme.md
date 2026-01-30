@@ -82,7 +82,8 @@ Max for sample 4: attribute 1
 Majority class for sample 4: False
 ```
 
-<img src="images/Descision_tree_2_splits.png" height=300 alt="Decision tree depth 2">
+<!-- <img src="images/Descision_tree_2_splits.png" height=300 alt="Decision tree depth 2"> -->
+![Peformance comparison](images/Descision_tree_2_splits.png)
 
 ### Using buildTree()
 
@@ -102,5 +103,5 @@ By pruning we will remove one or more nodes in the tree, this will decrease the 
  
 ## Assignment 7
 
-
+![Peformance comparison](images/Performance_varying_validation_fraction.png)
 
