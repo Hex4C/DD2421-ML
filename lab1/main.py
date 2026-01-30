@@ -38,13 +38,24 @@ def calculate_monk_entropy():
     return entropy_m1, entropy_m2, entropy_m3
 
 def build_descion_tree():
-    # d.select()/7z   
-    d.select(4)
     t1 = d.buildTree(m.monk1, m.attributes)
+    t2 = d.buildTree(m.monk2, m.attributes)
+    t3 = d.buildTree(m.monk3, m.attributes)
     
-    print(d.check(t1, m.monk1test))
-
-    drawTree(t1)
+    print("Monk 1")
+    print(f"Training data performance: {d.check(t1, m.monk1)}")
+    print(f"Testing data performance: {d.check(t1, m.monk1test)}")
+    print()
+    
+    print("Monk 2")
+    print(f"Training data performance: {d.check(t2, m.monk2)}")
+    print(f"Testing data performance: {d.check(t2, m.monk2test)}")
+    print()
+    
+    print("Monk 3")
+    print(f"Training data performance: {d.check(t3, m.monk3)}")
+    print(f"Testing data performance: {d.check(t3, m.monk3test)}")
+    print()
 
 def main():
     datasets = [m.monk1, m.monk2, m.monk3]
