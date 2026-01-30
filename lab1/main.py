@@ -68,13 +68,25 @@ def build_tree_manual(monk_dataset):
     
     max_attribute = max(gains)
     a_index = gains.index(max_attribute)
-    print("attr :", a_index)
+    attribute = m.attributes[a_index]
     
-    drawTree(monk_dataset)
-    t = d.select(monk_dataset, m.attributes[a_index], max_attribute)
-    drawTree(monk_dataset)
-    print(d.mostCommon(monk_dataset))
-    print(t)
+    samples = []
+    for i in range(1, 5):
+        ss = d.select(monk_dataset, attribute, i)
+        samples.append(ss)
+
+    for index, sample in enumerate(samples):
+        gains = []
+        for attribute in m.attributes:
+            data = d.averageGain(sample, attribute)
+            gains.append(data)
+        
+        max_attribute = max(gains)
+        a_index = gains.index(max_attribute)
+        print(f"Max for sample {index + 1}: attribute {a_index + 1}")
+    
+    ra
+    
 
 def main():
     datasets = [m.monk1, m.monk2, m.monk3]

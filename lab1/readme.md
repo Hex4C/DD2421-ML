@@ -58,7 +58,20 @@ This means when maximizing the information gain we are searching for the path (s
 
 ## Assignment 5
 
+### Using select()
 
+Max gain for value 1: attribute 1
+
+Max gain for value 2: attribute 4
+
+Max gain for value 3: attribute 6
+
+Max gain for value 4: attribute 1
+
+So for the value 1 node, we should select attribute 1, for value node 2 attribute 4, for value node 3 attribute 6 and for value node 4 attribute 1.
+
+
+###
 
 ### Using buildTree()
 
