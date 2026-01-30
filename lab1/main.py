@@ -135,7 +135,7 @@ def boxplot_results(m1, e1, m2, e2): # Added fraction to args for reproducibilit
     
     plt.figure(figsize=(12, 6))
     plt.suptitle(
-        "Model test performance with varying validation fractions",
+        "Model test performance with varying validation fractions (mean & var for 100 runs)",
         fontsize=16,
         y=0.98
     )
