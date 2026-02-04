@@ -19,6 +19,8 @@ The hardest set to classify is MONK-2 since it can't be efficiently mapped by a 
 
 ## Assignment 1
 
+The entropy of MONK 1 are 1, which means it has a evenl split in the dataset, leading to low predicability. MONK 3 is also close to even split, compared to MONK 2, which has less evenly split, between in the classes. This does not say much about the complexity of the dataset, rather than the distribution of the true/false classes. 
+
 | Monk   | Entropy            |
 | ------ | ------------------ |
 | MONK 1 | 1                  |
