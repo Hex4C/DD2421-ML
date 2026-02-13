@@ -44,4 +44,4 @@ C sets the bounds for the resulting alpha values. A lower C value means that the
 
 ## Question 5 ()
 
-You would like to match the selection of model (kernel) i.e. RBF, polynomial or linear based on the data. For complex data (more features/classes) this tend to result in more complex models. If the data is more noisy, the best option would instead be to allow more slack. Otherwise, we could overfit on the noise, if we just increase the model complexity, which will result in more generalisation.
+You would like to match the selection of model (kernel) i.e. RBF, polynomial or linear based on the data. For complex data (more features/classes) this tend to result in more complex models. If the data is more noisy, the best option would instead be to allow more slack, which will result in more generalisation. Otherwise, we could overfit on the noise if we just increase the model complexity.
