@@ -157,9 +157,9 @@ class BayesClassifier(object):
 
 
 # Init tests
-# X, labels = genBlobs(centers=5)
-# mu, sigma = mlParams(X,labels)
-# plotGaussian(X,labels,mu,sigma)
+X, labels = genBlobs(centers=5)
+mu, sigma = mlParams(X,labels)
+plotGaussian(X,labels,mu,sigma)
 
 
 # Call the `testClassifier` and `plotBoundary` functions for this part.
