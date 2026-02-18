@@ -3,11 +3,12 @@
 
 ## ENV usage
 # Create the virtual environment
-python3 -m venv mlp_env
+python3 -m venv ml_env
 
 # Activate it
-source mlp_env/bin/activate (mac)
-mlp_env\Scripts\activate (windows)
+source ml_env/bin/activate (mac)
+ml_env\Scripts\activate (windows)
+ml_env_38\Scripts\activate
 
 
 # Install requirements

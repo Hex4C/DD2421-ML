@@ -17,8 +17,8 @@
 # Check out `labfuns.py` if you are interested in the details.
 
 import numpy as np
-from scipy import misc
-from imp import reload
+# from scipy import misc
+# import importlib
 from labfuns import *
 import random
 
@@ -44,6 +44,11 @@ def computePrior(labels, W=None):
 
     # TODO: compute the values of prior for each class!
     # ==========================
+
+    # p(k) = N-k / N
+    for k, cls in enumerate(classes):
+        idx = np.where(labels==cls)[0]
+        prior[k] = len(idx) / Npts
     
     # ==========================
 
@@ -69,6 +74,18 @@ def mlParams(X, labels, W=None):
     # TODO: fill in the code to compute mu and sigma!
     # ==========================
     
+    # mu_k = (sum(x_i) / N_k) for every calss k
+    # sigma_k (m,m) = (1 / N_k) * sum(x_i(m) - mu_k(m))^2 for m = m, sigma_k (m, n) = 0 for m != n
+
+    for class_index, cls in enumerate(classes):
+        idx = np.where(labels==cls)[0]
+        xlc = X[idx,:]
+
+        mu[class_index] = np.mean(xlc, axis=0)                       
+
+        var = np.mean((xlc - mu[class_index])**2, axis=0)
+        sigma[class_index] = np.diag(var)
+    
     # ==========================
 
     return mu, sigma
@@ -86,6 +103,26 @@ def classifyBayes(X, prior, mu, sigma):
 
     # TODO: fill in the code to compute the log posterior logProb!
     # ==========================
+
+    # delta_k (x*) = -1 * (1/2) * ln(|sigma_k|) - (1/2) * (x* - mu_k) * sum(x* - mu_k)^T + ln(p(k))
+    # term1: -(1/2) * ln(|sigma_k|) 
+    # term2: -(1/2) * (x - mu_k) * (x - mu_k)
+    # term3: ln(p(k)) + C
+
+    # p(k) = N_k / N
+    for class_index in range(len(mu)):
+        mu_k = mu[class_index]
+        sigma_k = np.diag(sigma[class_index])
+        p_k = prior[class_index]
+
+        # Avoid log(0) by filtering for diagnoal of sigma
+        term1 = -0.5 * np.sum(np.log(sigma_k))
+
+        term2 = -0.5 * np.sum((X - mu_k)**2 / sigma_k, axis=1)
+
+        term3 = np.log(p_k)
+
+        logProb[class_index] = term1 + term2 + term3
     
     # ==========================
     
@@ -119,23 +156,26 @@ class BayesClassifier(object):
 # Call `genBlobs` and `plotGaussian` to verify your estimates.
 
 
-X, labels = genBlobs(centers=5)
-mu, sigma = mlParams(X,labels)
-plotGaussian(X,labels,mu,sigma)
+# Init tests
+# X, labels = genBlobs(centers=5)
+# mu, sigma = mlParams(X,labels)
+# plotGaussian(X,labels,mu,sigma)
 
 
 # Call the `testClassifier` and `plotBoundary` functions for this part.
 
 
-#testClassifier(BayesClassifier(), dataset='iris', split=0.7)
+testClassifier(BayesClassifier(), dataset='iris', split=0.7)
 
 
 
-#testClassifier(BayesClassifier(), dataset='vowel', split=0.7)
+testClassifier(BayesClassifier(), dataset='vowel', split=0.7)
 
 
 
-#plotBoundary(BayesClassifier(), dataset='iris',split=0.7)
+plotBoundary(BayesClassifier(), dataset='iris',split=0.7)
+
+plotBoundary(BayesClassifier(), dataset='vowel',split=0.7)
 
 
 # ## Boosting functions to implement
@@ -225,7 +265,7 @@ class BoostClassifier(object):
 # Call the `testClassifier` and `plotBoundary` functions for this part.
 
 
-#testClassifier(BoostClassifier(BayesClassifier(), T=10), dataset='iris',split=0.7)
+# testClassifier(BoostClassifier(BayesClassifier(), T=10), dataset='iris',split=0.7)
 
 
 
